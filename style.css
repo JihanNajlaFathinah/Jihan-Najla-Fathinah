@@ -1,35 +1,20 @@
-
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
-
 
 body { 
     font-family: 'Plus Jakarta Sans', sans-serif; 
 }
 
+/* Background Shapes (Statis) */
 .shape {
     position: absolute;
     border-radius: 50%;
     opacity: 0.6; 
     z-index: -1;
     filter: blur(80px);
-    transition: transform 0.1s ease-out;
 }
 
-.tilt-container {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-}
-
-.tilt-card {
-    transition: transform 0.1s ease-out;
-    transform-style: preserve-3d;
-}
-
-#fact-display {
-    min-height: 3rem; 
-}
-
-
+/* Mobile Menu Transition */
 #mobile-menu {
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     max-height: 0;
