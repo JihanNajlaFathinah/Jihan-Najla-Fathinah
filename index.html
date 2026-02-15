@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jihan Najla Fathinah Library</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #1693F7;        /* WARNA BARU */
-      --primary-dark: #0f6dc0;
-      --secondary: #F5F7FA;
+      --primary: #4095E5;
+      --primary-dark: #3c8bd6;
+      --secondary: #F0ECCE;
       --text-dark: #2c3e50;
     }
 
@@ -24,13 +23,13 @@
 
     /* BACKGROUND GRADIENT */
     body {
+      background: linear-gradient(135deg, #5AB4BF, #4aa2ad);
       min-height: 100vh;
-      background: linear-gradient(135deg, #1693F7, #6EC6FF);
     }
 
     /* NAVBAR */
     nav {
-      background: var(--primary-dark);
+      background-color: var(--primary-dark);
       padding: 15px 0;
       text-align: center;
     }
@@ -45,16 +44,16 @@
     }
 
     nav ul li a {
-      color: white;
       text-decoration: none;
+      color: white;
       font-weight: 500;
     }
 
-    /* HERO */
+    /* HERO GRADIENT */
     .hero {
-      background: linear-gradient(135deg, #1693F7, #4FB3FF);
-      color: white;
+      background: linear-gradient(135deg, #5f9cff, #4fd1c5);
       text-align: center;
+      color: white;
       padding: 100px 20px;
     }
 
@@ -70,13 +69,13 @@
 
     /* CARD */
     .card {
-      background: white;
+      background: var(--secondary);
       width: 80%;
       max-width: 900px;
-      margin: -40px auto 40px;
+      margin: 40px auto;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       text-align: center;
       color: var(--text-dark);
     }
@@ -93,7 +92,6 @@
       padding: 15px;
       border-radius: 30px;
       border: 2px solid var(--primary);
-      outline: none;
     }
 
     .search-box button {
@@ -103,7 +101,6 @@
       border: none;
       background: var(--primary);
       color: white;
-      cursor: pointer;
     }
 
     /* TAGS */
@@ -111,14 +108,12 @@
       display: inline-block;
       padding: 10px 20px;
       margin: 10px;
-      background: #f0f6ff;
+      background: white;
       border-radius: 20px;
       border: 1px solid var(--primary);
-      color: var(--primary);
-      font-size: 14px;
     }
 
-    /* JAM OPERASIONAL */
+    /* JAM OPERASIONAL (SUDAH BENAR) */
     .jam-operasional {
       display: flex;
       justify-content: center;
@@ -128,27 +123,22 @@
     }
 
     .jam-operasional p {
-      background: #f9fbff;
+      background: white;
       padding: 18px 25px;
       border-radius: 15px;
       min-width: 180px;
       box-shadow: 0 8px 18px rgba(0,0,0,0.12);
       border-top: 5px solid var(--primary);
-      font-size: 14px;
     }
 
     hr {
       margin: 25px 0;
-      border: none;
-      height: 1px;
-      background: #ddd;
     }
 
     .footer-text {
       font-size: 14px;
     }
 
-    /* RESPONSIVE */
     @media(max-width: 768px) {
       .search-box {
         flex-direction: column;
