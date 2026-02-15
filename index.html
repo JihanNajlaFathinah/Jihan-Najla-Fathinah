@@ -29,24 +29,56 @@
 
     /* NAVBAR */
     nav {
-      background-color: var(--primary-dark);
+      background: var(--primary-dark);
       padding: 15px 0;
-      text-align: center;
     }
 
-    nav ul {
+    .menu {
       list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 35px;
     }
 
-    nav ul li {
-      display: inline;
-      margin: 0 20px;
+    .menu li {
+      position: relative;
     }
 
-    nav ul li a {
-      text-decoration: none;
+    .menu a {
       color: white;
+      text-decoration: none;
       font-weight: 500;
+      padding: 8px 14px;
+      display: block;
+    }
+
+    /* DROPDOWN */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: white;
+      border-radius: 12px;
+      min-width: 200px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .dropdown-menu li a {
+      color: #333;
+      padding: 12px 20px;
+    }
+
+    .dropdown-menu li a:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
 
     /* HERO GRADIENT */
@@ -230,6 +262,7 @@ function searchBook() {
     
 </body>
 </html>
+
 
 
 
