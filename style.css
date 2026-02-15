@@ -1,5 +1,6 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #4facfe, #43e97b);
+.hero {
+  background: linear-gradient(135deg, #5f9cff, #4fd1c5);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
 }
