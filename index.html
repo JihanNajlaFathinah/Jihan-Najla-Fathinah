@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jihan Najla Fathinah Library</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --primary: #5AB4BF;
@@ -21,12 +21,13 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    /* BACKGROUND GRADIENT */
     body {
-      background: linear-gradient(135deg, var(--primary), #4aa2ad);
+      background: linear-gradient(135deg, #5AB4BF, #4aa2ad);
       min-height: 100vh;
     }
 
-    /* Navbar */
+    /* NAVBAR */
     nav {
       background-color: var(--primary-dark);
       padding: 15px 0;
@@ -46,18 +47,14 @@
       text-decoration: none;
       color: white;
       font-weight: 500;
-      transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      opacity: 0.8;
-    }
-
-    /* Hero */
+    /* HERO GRADIENT */
     .hero {
+      background: linear-gradient(135deg, #5f9cff, #4fd1c5);
       text-align: center;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px;
     }
 
     .hero h1 {
@@ -70,7 +67,7 @@
       font-size: 16px;
     }
 
-    /* Card */
+    /* CARD */
     .card {
       background: var(--secondary);
       width: 80%;
@@ -83,7 +80,7 @@
       color: var(--text-dark);
     }
 
-    /* Search */
+    /* SEARCH */
     .search-box {
       display: flex;
       justify-content: center;
@@ -95,8 +92,6 @@
       padding: 15px;
       border-radius: 30px;
       border: 2px solid var(--primary);
-      outline: none;
-      background: white;
     }
 
     .search-box button {
@@ -106,72 +101,53 @@
       border: none;
       background: var(--primary);
       color: white;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: 500;
     }
 
-    .search-box button:hover {
-      background: var(--primary-dark);
-    }
-
-    /* Tags */
-    .tags {
-      margin-bottom: 30px;
-    }
-
+    /* TAGS */
     .tag {
       display: inline-block;
       padding: 10px 20px;
       margin: 10px;
       background: white;
       border-radius: 20px;
-      font-size: 14px;
-      cursor: pointer;
       border: 1px solid var(--primary);
-      transition: 0.3s;
     }
 
-    .tag:hover {
-      background: var(--primary);
-      color: white;
+    /* JAM OPERASIONAL (SUDAH BENAR) */
+    .jam-operasional {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 25px 0;
+      flex-wrap: wrap;
     }
 
-    /* Info Box */
-    .info-box {
+    .jam-operasional p {
       background: white;
-      padding: 20px;
+      padding: 18px 25px;
       border-radius: 15px;
-      margin-bottom: 30px;
-      border-left: 6px solid var(--primary);
-      font-size: 14px;
+      min-width: 180px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      border-top: 5px solid var(--primary);
     }
 
     hr {
-      margin: 20px 0;
-      border: none;
-      height: 1px;
-      background: #ccc;
+      margin: 25px 0;
     }
 
     .footer-text {
       font-size: 14px;
     }
 
-    /* Responsive */
     @media(max-width: 768px) {
       .search-box {
         flex-direction: column;
       }
 
-      .search-box input {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-
+      .search-box input,
       .search-box button {
         width: 100%;
-        margin-left: 0;
+        margin: 5px 0;
       }
 
       .hero h1 {
@@ -180,6 +156,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -194,27 +171,28 @@
 
   <section class="hero">
     <h1>Welcome to Jihan Najla Fathinah Library</h1>
-    <p>Ribuan Buku Siap untuk Kamu Baca!.</p>
+    <p>Ribuan Buku Siap untuk Kamu Baca!</p>
   </section>
 
   <div class="card">
-    
+
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Masukkan kata kunci untuk mencari koleksi...">
-      <button onclick="search()">Cari</button>
+      <input type="text" placeholder="Masukkan kata kunci untuk mencari koleksi...">
+      <button>Cari</button>
     </div>
 
-    <div class="tags">
+    <div>
       <span class="tag">Koleksi Digital</span>
       <span class="tag">Inspirasi Akademik</span>
       <span class="tag">Ruang Belajar</span>
     </div>
 
-    <h3 style="margin-bottom:15px;">🕒 Jam Operasional</h3>
-    <div class="Jam Operasional">
-  <p><strong>Senin – Kamis</strong><br>08.00 – 16.00 WIB</p>
-  <p><strong>Jumat</strong><br>08.30 – 16.30 WIB</p>
-</div>
+    <h3 style="margin:20px 0;">🕒 Jam Operasional</h3>
+
+    <div class="jam-operasional">
+      <p><strong>Senin – Kamis</strong><br>08.00 – 16.00 WIB</p>
+      <p><strong>Jumat</strong><br>08.30 – 16.30 WIB</p>
+    </div>
 
     <hr>
 
@@ -226,19 +204,5 @@
 
   </div>
 
-  <script>
-    function search() {
-      const keyword = document.getElementById("searchInput").value;
-      if(keyword.trim() === ""){
-        alert("Silakan masukkan kata kunci terlebih dahulu!");
-      } else {
-        alert("Mencari koleksi dengan kata kunci: " + keyword);
-      }
-    }
-  </script>
-
 </body>
 </html>
-
-
-
