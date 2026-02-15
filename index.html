@@ -208,10 +208,29 @@
       Universitas Sumatera Utara
     </div>
 
-  </div>
+ <div class="footer">
+    © 2026 Jihan Najla Library
+</div>
 
+<script>
+function searchBook() {
+    var input = document.getElementById("searchInput").value.toLowerCase();
+    var cards = document.getElementsByClassName("book-card");
+
+    for (var i = 0; i < cards.length; i++) {
+        var text = cards[i].textContent.toLowerCase();
+        if (text.indexOf(input) > -1) {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
+    
 </body>
 </html>
+
 
 
 
