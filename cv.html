@@ -4,86 +4,101 @@
   <meta charset="UTF-8">
   <title>Curriculum Vitae - Jihan Najla Fathinah</title>
   <style>
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #eaf6fb, #f7fbfd);
+    margin: 0;
+    padding: 40px 0;
+    color: var(--text-dark);
+  }
 
-    .cv-container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
+  .cv-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 45px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  }
 
+  /* HEADER */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .photo img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary);
+  }
+
+  .header-text h1 {
+    margin: 0;
+    font-size: 30px;
+    color: var(--primary);
+  }
+
+  .header-text p {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #555;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 35px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 6px;
+    height: 70%;
+    background: var(--secondary);
+    border-radius: 5px;
+  }
+
+  .section p,
+  .section li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #777;
+  }
+
+  @media (max-width: 768px) {
     .header {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      border-bottom: 3px solid #1693F7;
-      padding-bottom: 25px;
-    }
-
-    .photo img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #1693F7;
-    }
-
-    .header-text h1 {
-      margin: 0;
-      font-size: 32px;
-      color: #2c3e50;
-    }
-
-    .header-text p {
-      margin: 6px 0;
-      font-size: 16px;
-      color: #555;
-    }
-
-    .section {
-      margin-top: 30px;
-    }
-
-    .section h2 {
-      color: #1693F7;
-      margin-bottom: 15px;
-      font-size: 22px;
-      border-left: 6px solid #1693F7;
-      padding-left: 12px;
-    }
-
-    .section p, .section li {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #333;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .footer {
+      flex-direction: column;
       text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #777;
     }
-
-    @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
