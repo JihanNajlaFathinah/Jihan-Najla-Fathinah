@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #1693F7, #5BC6C6);
+    }
+
+    .login-box {
+      background: white;
+      padding: 35px;
+      width: 340px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 12px;
+      background: #4095E5;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Login</h2>
+
+  <input type="text" id="fname" placeholder="First Name" required>
+  <input type="text" id="lname" placeholder="Last Name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+
+  <button onclick="login()">Masuk</button>
+</div>
+
+<script>
+function login() {
+  const fname = document.getElementById("fname").value;
+  const lname = document.getElementById("lname").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (fname && lname && email && password) {
+    localStorage.setItem("login", "true");
+    localStorage.setItem("fullname", fname + " " + lname);
+
+    // PINDAH KE TAB BARU
+    window.open("index.html", "_blank");
+  } else {
+    alert("Semua data wajib diisi!");
+  }
+}
+</script>
+
+</body>
+</html>
