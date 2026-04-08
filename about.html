@@ -5,59 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Komika Library</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR (boleh sama persis seperti index.html) -->
 <nav>
   <ul class="menu">
     <li><a href="index.html">Beranda</a></li>
-    <li><a href="komunitas.html">Komunitas</a></li>
+    <li><a href="#">Layanan</a></li>
+    <li><a href="komunitas.html" target="_blank">Komunitas</a></li>
     <li class="login-menu">
       <a href="login.html" class="login-btn">Login</a>
     </li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <h1>About Us</h1>
-  <p class="hero-bubble">Tentang Komika Library</p>
+  <p class="hero-bubble">Mengenal Komika Library Lebih Dekat</p>
 </section>
 
+<!-- KONTEN -->
 <div class="card">
 
-  <h2>📚 Tentang Kami</h2>
-  <p style="margin-bottom: 30px;">
-    Komika Library adalah perpustakaan digital yang menyediakan
-    manga, komik, dan bacaan inspiratif untuk mendukung literasi
-    digital dan komunitas pembaca.
+  <h2 style="margin-bottom:15px;">📚 Tentang Komika Library</h2>
+  <p style="line-height:1.8; margin-bottom:30px;">
+    <strong>Komika Library</strong> adalah platform perpustakaan digital
+    yang menyediakan koleksi manga, komik, dan bacaan inspiratif.
+    Website ini dibuat untuk mendukung literasi digital serta
+    menjadi ruang eksplorasi bagi pecinta komik dan manga.
   </p>
 
-  <h2>💌 Kotak Saran & Feedback</h2>
+  <h2 style="margin-bottom:15px;">🎯 Tujuan Kami</h2>
+  <ul style="margin-bottom:30px; padding-left:20px; line-height:1.8;">
+    <li>Menyediakan bacaan digital yang mudah diakses</li>
+    <li>Mendukung minat baca generasi muda</li>
+    <li>Menjadi ruang komunitas yang positif dan edukatif</li>
+  </ul>
 
-  <form id="feedbackForm" class="feedback-form">
-    <input type="text" id="nama" placeholder="Nama (opsional)">
-    
-    <textarea id="pesan" rows="5" placeholder="Tulis feedback atau saran kamu..." required></textarea>
-    
+  <hr style="margin:30px 0;">
+
+  <!-- FEEDBACK -->
+  <h2 style="margin-bottom:15px;">💌 Kotak Saran & Feedback</h2>
+  <p style="margin-bottom:20px;">
+    Saran dan masukan Anda sangat berarti bagi pengembangan Komika Library.
+    Silakan tinggalkan pesan Anda di bawah ini.
+  </p>
+
+  <form id="feedbackForm">
+    <div style="margin-bottom:15px;">
+      <label>Nama</label><br>
+      <input type="text" id="nama" required style="width:100%; padding:12px; border:2px solid #111;">
+    </div>
+
+    <div style="margin-bottom:15px;">
+      <label>Email</label><br>
+      <input type="email" id="email" required style="width:100%; padding:12px; border:2px solid #111;">
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <label>Pesan / Feedback</label><br>
+      <textarea id="pesan" rows="5" required style="width:100%; padding:12px; border:2px solid #111;"></textarea>
+    </div>
+
     <button type="submit" class="btn-primary">Kirim Feedback</button>
   </form>
 
-  <p id="feedbackStatus" style="margin-top:15px; font-weight:600;"></p>
+  <p id="notif" style="margin-top:20px; font-weight:600;"></p>
 
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-bottom">
     © <span id="year"></span> Komika Library
   </div>
 </footer>
 
-<script src="script.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Feedback (TIDAK DITAMPILKAN SEPERTI FORUM)
+  document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("notif").textContent = 
+      "Terima kasih! Feedback Anda telah berhasil dikirim.";
+    document.getElementById("feedbackForm").reset();
+  });
 </script>
 
 </body>
