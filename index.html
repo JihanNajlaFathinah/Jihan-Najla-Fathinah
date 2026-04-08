@@ -3,307 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jihan Najla Library</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Komika Library</title>
 
-  <style>
-    :root {
-      --primary: #4095E5;
-      --primary-dark: #3C8BD6;
-      --secondary: #F0ECCE;
-      --text-dark: #2c3e50;
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* BACKGROUND GRADIENT */
-    body {
-  background: linear-gradient(180deg, #1693F7 0%, #5BC6C6 100%);
-  min-height: 100vh;
-}
-
-    /* NAVBAR */
-    nav {
-      background: var(--primary-dark);
-      padding: 15px 0;
-    }
-
-    .menu {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-}
-
-    .menu li {
-      position: relative;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 8px 14px;
-      display: block;
-    }
-
-    .login-menu {
-  margin-left: auto;
-}
-
-    /* DROPDOWN */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 110%;
-      left: 0;
-      background: white;
-      border-radius: 12px;
-      min-width: 200px;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      overflow: hidden;
-      z-index: 999;
-    }
-
-    .dropdown-menu li a {
-      color: #333;
-      padding: 12px 20px;
-    }
-
-    .dropdown-menu li a:hover {
-      background: var(--primary);
-      color: white;
-    }
-    
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* HERO GRADIENT */
-   .hero {
-  background: linear-gradient(90deg, #1693F7 0%, #5BC6C6 100%);
-  text-align: center;
-  color: white;
-  padding: 60px 20px;
-}
-    
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    /* CARD */
-    .card {
-  background: rgba(240, 236, 206, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  width: 80%;
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 40px;
-
-  border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.6);
-
-  box-shadow:
-    0 25px 50px rgba(0,0,0,0.2);
-
-  text-align: center;
-  color: var(--text-dark);
-  position: relative;
-  z-index: 10;
-}
-
-    /* SEARCH */
-    .search-box {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-
-    .search-box input {
-      width: 70%;
-      padding: 15px;
-      border-radius: 30px;
-      border: 2px solid var(--primary);
-    }
-
-    .search-box button {
-      padding: 15px 25px;
-      margin-left: 10px;
-      border-radius: 30px;
-      border: none;
-      background: var(--primary);
-      color: white;
-    }
-
-    /* TAGS */
-    .tag {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background: white;
-      border-radius: 20px;
-      border: 1px solid var(--primary);
-    }
-
-    /* JAM OPERASIONAL (SUDAH BENAR) */
-    .jam-operasional {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin: 25px 0;
-      flex-wrap: wrap;
-    }
-
-    .jam-operasional p {
-      background: white;
-      padding: 18px 25px;
-      border-radius: 15px;
-      min-width: 180px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-      border-top: 5px solid var(--primary);
-    }
-
-    hr {
-      margin: 25px 0;
-    }
-
-    .footer-text {
-      font-size: 14px;
-    }
-
-    @media(max-width: 768px) {
-      .search-box {
-        flex-direction: column;
-      }
-
-      .search-box input,
-      .search-box button {
-        width: 100%;
-        margin: 5px 0;
-      }
-
-      .hero h1 {
-        font-size: 28px;
-      }
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<nav>
-  <ul class="menu">
-    <li><a href="#">Beranda</a></li>
-    <li><a href="#">Layanan</a></li>
-
-    <!-- DROPDOWN -->
-    <li class="dropdown">
-      <a href="#">Admin ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="cv.html" target="_blank">Curriculum Vitae</a></li>
-        <li>
-          <a href="https://instagram.com/JIAANNFS"
-             target="_blank"
-             rel="noopener noreferrer">
-            Media Sosial
-          </a>
-        </li>
-        <li>
-          <a href="https://youtu.be/pfM6q0TLoUo?si=1NOcOe_cCuwA1Cjx"
-             target="_blank"
-             rel="noopener noreferrer">
-            Audio dan Video
-          </a>
-        </li>
-      </ul>
-    </li> 
-
-    <li class="login-menu">
-  <a href="login.html" target="_blank" class="login-btn">Login</a>
-</li>
-
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#">Layanan</a></li>
+      <li><a href="#">Admin</a></li>
+      <li class="login"><a href="#">Login</a></li>
+    </ul>
+  </nav>
 
   <section class="hero">
-    <h1>Welcome to Komika Library</h1>
-    <p>Ribuan Buku Siap untuk Kamu Baca!</p>
+    <h1>Komika Library</h1>
+    <p>Baca Dunia Manga Tanpa Batas</p>
   </section>
 
-  <div class="card">
-
+  <section class="card">
     <div class="search-box">
-      <input type="text" placeholder="Masukkan kata kunci untuk mencari koleksi...">
-      <button>Cari</button>
+      <input type="text" placeholder="Masukkan kata kunci pencarian..." />
+      <button>CARI</button>
     </div>
 
-    <div>
+    <div class="tags">
       <span class="tag">Koleksi Digital</span>
       <span class="tag">Bacaan Inspirasi</span>
-      <span class="tag">Komik dan Manga</span>
+      <span class="tag">Komik & Manga</span>
     </div>
 
-    <h3 style="margin:20px 0;">🕒 Jam Operasional</h3>
+    <h3 class="section-title">🕒 Jam Operasional</h3>
 
-    <div class="jam-operasional">
-      <p><strong>Senin – Kamis</strong><br>08.00 – 16.00 WIB</p>
-      <p><strong>Jumat</strong><br>08.30 – 16.30 WIB</p>
+    <div class="jam">
+      <div><strong>Senin – Kamis</strong><br />08.00 – 16.00 WIB</div>
+      <div><strong>Jumat</strong><br />08.30 – 16.30 WIB</div>
     </div>
+  </section>
 
-    <hr>
+  <footer>
+    <strong>Jihan Najla Fathinah</strong><br />
+    230709062 – Universitas Sumatera Utara<br />
+    © 2026 Komika Library
+  </footer>
 
-    <div class="footer-text">
-      <strong>Jihan Najla Fathinah</strong><br>
-      230709062<br>
-      Universitas Sumatera Utara
-    </div>
-
- <div class="footer">
-    © 2026 Jihan Najla Library
-</div>
-
-<script>
-function searchBook() {
-    var input = document.getElementById("searchInput").value.toLowerCase();
-    var cards = document.getElementsByClassName("book-card");
-
-    for (var i = 0; i < cards.length; i++) {
-        var text = cards[i].textContent.toLowerCase();
-        if (text.indexOf(input) > -1) {
-            cards[i].style.display = "block";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
-}
-</script>
-    
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
