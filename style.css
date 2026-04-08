@@ -117,6 +117,26 @@ nav {
   width: 100%;
 }
 
+/* ===== FEEDBACK FORM ===== */
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  padding: 12px;
+  border: 2px solid var(--border);
+  font-family: 'Poppins', sans-serif;
+  resize: none;
+}
+
+.feedback-form textarea {
+  min-height: 120px;
+}
+
 /* HERO */
 .hero {
   background: linear-gradient(135deg, #2F6FE4, #5B8CFF);
