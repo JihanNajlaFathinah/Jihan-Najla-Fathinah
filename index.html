@@ -5,53 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Komika Library</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="#">Beranda</a></li>
-      <li><a href="#">Layanan</a></li>
-      <li><a href="#">Admin</a></li>
-      <li class="login"><a href="#">Login</a></li>
-    </ul>
-  </nav>
+<nav>
+  <ul class="menu">
+    <li><a href="#">Beranda</a></li>
+    <li><a href="#">Layanan</a></li>
 
-  <section class="hero">
-    <h1>Komika Library</h1>
-    <p>Baca Dunia Manga Tanpa Batas</p>
-  </section>
+    <li class="dropdown">
+      <a href="#">Admin ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="cv.html" target="_blank">Curriculum Vitae</a></li>
+        <li><a href="https://instagram.com/JIAANNFS" target="_blank">Media Sosial</a></li>
+        <li><a href="https://youtu.be/pfM6q0TLoUo" target="_blank">Audio & Video</a></li>
+      </ul>
+    </li>
 
-  <section class="card">
-    <div class="search-box">
-      <input type="text" placeholder="Masukkan kata kunci pencarian..." />
-      <button>CARI</button>
+    <li class="login-menu">
+      <a href="login.html" class="login-btn">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Komika Library</h1>
+  <p class="hero-bubble">Baca Dunia Manga Tanpa Batas</p>
+</section>
+
+<div class="card">
+
+  <div class="search-box">
+    <input type="text" placeholder="Masukkan kata kunci pencarian...">
+    <button>CARI</button>
+  </div>
+
+  <div class="tags">
+    <span class="tag">Koleksi Digital</span>
+    <span class="tag">Bacaan Inspirasi</span>
+    <span class="tag">Komik & Manga</span>
+  </div>
+
+  <h3 class="section-title">🕒 Jam Operasional</h3>
+
+  <div class="jam-operasional">
+    <div>
+      <strong>Senin – Kamis</strong><br>
+      08.00 – 16.00 WIB
     </div>
-
-    <div class="tags">
-      <span class="tag">Koleksi Digital</span>
-      <span class="tag">Bacaan Inspirasi</span>
-      <span class="tag">Komik & Manga</span>
+    <div>
+      <strong>Jumat</strong><br>
+      08.30 – 16.30 WIB
     </div>
+  </div>
 
-    <h3 class="section-title">🕒 Jam Operasional</h3>
+</div>
 
-    <div class="jam">
-      <div><strong>Senin – Kamis</strong><br />08.00 – 16.00 WIB</div>
-      <div><strong>Jumat</strong><br />08.30 – 16.30 WIB</div>
-    </div>
-  </section>
-
-  <footer>
-    <strong>Jihan Najla Fathinah</strong><br />
-    230709062 – Universitas Sumatera Utara<br />
-    © 2026 Komika Library
-  </footer>
+<footer>
+  <strong>Jihan Najla Fathinah</strong><br>
+  230709062 – Universitas Sumatera Utara<br>
+  © 2026 Komika Library
+</footer>
 
 </body>
 </html>
