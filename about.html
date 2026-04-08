@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Komika Library</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+  <ul class="menu">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="komunitas.html">Komunitas</a></li>
+    <li class="login-menu">
+      <a href="login.html" class="login-btn">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>About Us</h1>
+  <p class="hero-bubble">Tentang Komika Library</p>
+</section>
+
+<div class="card">
+
+  <h2>📚 Tentang Kami</h2>
+  <p style="margin-bottom: 30px;">
+    Komika Library adalah perpustakaan digital yang menyediakan
+    manga, komik, dan bacaan inspiratif untuk mendukung literasi
+    digital dan komunitas pembaca.
+  </p>
+
+  <h2>💌 Kotak Saran & Feedback</h2>
+
+  <form id="feedbackForm" class="feedback-form">
+    <input type="text" id="nama" placeholder="Nama (opsional)">
+    
+    <textarea id="pesan" rows="5" placeholder="Tulis feedback atau saran kamu..." required></textarea>
+    
+    <button type="submit" class="btn-primary">Kirim Feedback</button>
+  </form>
+
+  <p id="feedbackStatus" style="margin-top:15px; font-weight:600;"></p>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    © <span id="year"></span> Komika Library
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
