@@ -77,11 +77,66 @@
 
 </div>
 
-<footer>
-  <strong>Jihan Najla Fathinah</strong><br>
-  230709062 – Universitas Sumatera Utara<br>
-  © 2026 Komika Library
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-section">
+      <h3>Komika Library</h3>
+      <p>
+        Perpustakaan digital yang menyediakan koleksi manga, komik,
+        dan bacaan inspiratif untuk mendukung literasi digital.
+      </p>
+    </div>
+
+    <!-- ALAMAT -->
+    <div class="footer-section">
+      <h3>Alamat</h3>
+      <p>
+        Universitas Sumatera Utara<br>
+        Jl. Dr. T. Mansur No.9<br>
+        Medan, Sumatera Utara
+      </p>
+      <a
+        href="https://maps.google.com/?q=Universitas+Sumatera+Utara"
+        target="_blank"
+        class="map-link">
+        📍 Lihat di Google Maps
+      </a>
+    </div>
+
+    <!-- SOSIAL MEDIA -->
+    <div class="footer-section">
+      <h3>Media Sosial</h3>
+      <ul class="social-links">
+        <li><a href="https://instagram.com/JIAANNFS" target="_blank">Instagram</a></li>
+        <li><a href="#" target="_blank">Twitter / X</a></li>
+        <li><a href="#" target="_blank">YouTube</a></li>
+      </ul>
+    </div>
+
+    <!-- INFORMASI -->
+    <div class="footer-section">
+      <h3>Informasi</h3>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="forum.html">Komunitas</a></li>
+        <li><a href="#">Kebijakan Privasi</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © <span id="year"></span> Komika Library | 
+      Jihan Najla Fathinah – Universitas Sumatera Utara
+    </p>
+  </div>
+
 </footer>
 
-</body>
-</html>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
