@@ -6,70 +6,95 @@
   --border: #111827;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   background: linear-gradient(180deg, #EAF1FF, #F9FAFB);
   color: var(--dark);
+  min-height: 100vh;
 }
 
 /* NAVBAR */
 nav {
   background: white;
   border-bottom: 3px solid var(--border);
-  padding: 14px 40px;
 }
 
-nav ul {
+.menu {
   list-style: none;
   display: flex;
   align-items: center;
+  padding: 15px 40px;
 }
 
-nav a {
+.menu a {
   text-decoration: none;
   color: var(--dark);
   font-weight: 600;
   margin-right: 25px;
 }
 
-nav .login {
+/* LOGIN BUTTON */
+.login-menu {
   margin-left: auto;
+}
+
+.login-btn {
   background: var(--accent);
   padding: 8px 18px;
   border: 2px solid var(--border);
   box-shadow: 3px 3px 0 var(--border);
 }
 
-nav .login a {
-  color: black;
+/* DROPDOWN */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 2px solid var(--border);
+  box-shadow: 5px 5px 0 var(--border);
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
 }
 
 /* HERO */
 .hero {
   background: linear-gradient(135deg, #2F6FE4, #5B8CFF);
-  color: white;
-  padding: 70px 20px;
   text-align: center;
+  padding: 70px 20px;
+  color: white;
 }
 
 .hero h1 {
   font-family: 'Comic Neue', cursive;
   font-size: 48px;
-  margin-bottom: 10px;
 }
 
-.hero p {
+.hero-bubble {
   display: inline-block;
+  margin-top: 15px;
   background: white;
   color: var(--dark);
   padding: 12px 26px;
-  border-radius: 40px;
+  border-radius: 30px;
   border: 2px solid var(--border);
   font-weight: 600;
 }
@@ -126,14 +151,14 @@ nav .login a {
   margin-bottom: 20px;
 }
 
-.jam {
+.jam-operasional {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.jam div {
+.jam-operasional div {
   background: var(--light);
   padding: 20px 30px;
   border: 2px solid var(--border);
