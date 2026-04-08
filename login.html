@@ -2,81 +2,170 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Komika Library</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Poppins, sans-serif;
-      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(180deg, #1693F7, #5BC6C6);
+      background: linear-gradient(135deg, #2F6FE4, #5BC6C6);
     }
 
-    .login-box {
+    .auth-box {
       background: white;
+      width: 360px;
       padding: 35px;
-      width: 340px;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      border-radius: 22px;
+      border: 3px solid #111;
+      box-shadow: 10px 10px 0 #111;
     }
 
-    .login-box h2 {
+    .auth-box h2 {
       text-align: center;
+      font-family: 'Comic Neue', cursive;
+      margin-bottom: 10px;
+    }
+
+    .auth-box p {
+      text-align: center;
+      font-size: 14px;
       margin-bottom: 20px;
+      color: #555;
     }
 
     input {
       width: 100%;
       padding: 12px;
-      margin: 8px 0;
-      border-radius: 12px;
-      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      border-radius: 14px;
+      border: 2px solid #111;
     }
 
     button {
       width: 100%;
       padding: 12px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 12px;
-      background: #4095E5;
-      color: white;
-      font-size: 16px;
+      border-radius: 14px;
+      border: 2px solid #111;
+      background: #F5B400;
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 4px 4px 0 #111;
+    }
+
+    button:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 6px 6px 0 #111;
+    }
+
+    .switch {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .switch span {
+      color: #2F6FE4;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
+
 <body>
 
-<div class="login-box">
-  <h2>Login</h2>
+<div class="auth-box">
 
-  <input type="text" id="fname" placeholder="First Name" required>
-  <input type="text" id="lname" placeholder="Last Name" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="password" id="password" placeholder="Password" required>
+  <!-- LOGIN -->
+  <div id="loginForm">
+    <h2>Login</h2>
+    <p>Masuk ke Komika Library</p>
 
-  <button onclick="login()">Masuk</button>
+    <input type="email" id="loginEmail" placeholder="Email">
+    <input type="password" id="loginPassword" placeholder="Password">
+
+    <button onclick="login()">Masuk</button>
+
+    <div class="switch">
+      Belum punya akun?
+      <span onclick="showSignup()">Daftar</span>
+    </div>
+  </div>
+
+  <!-- SIGN UP -->
+  <div id="signupForm" class="hidden">
+    <h2>Sign Up</h2>
+    <p>Buat akun baru</p>
+
+    <input type="text" id="fname" placeholder="First Name">
+    <input type="text" id="lname" placeholder="Last Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+
+    <button onclick="signup()">Daftar</button>
+
+    <div class="switch">
+      Sudah punya akun?
+      <span onclick="showLogin()">Login</span>
+    </div>
+  </div>
+
 </div>
 
 <script>
-function login() {
-  const fname = document.getElementById("fname").value;
-  const lname = document.getElementById("lname").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  function showSignup() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("signupForm").classList.remove("hidden");
+  }
 
-  if (fname && lname && email && password) {
-    localStorage.setItem("login", "true");
+  function showLogin() {
+    document.getElementById("signupForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+  }
+
+  function signup() {
+    const fname = document.getElementById("fname").value;
+    const lname = document.getElementById("lname").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+
+    if (!fname || !lname || !email || !password) {
+      alert("Semua data wajib diisi!");
+      return;
+    }
+
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("userPassword", password);
     localStorage.setItem("fullname", fname + " " + lname);
 
-    // PINDAH KE TAB BARU
-    window.open("index.html", "_blank");
-  } else {
-    alert("Semua data wajib diisi!");
+    alert("Akun berhasil dibuat. Silakan login.");
+    showLogin();
   }
-}
+
+  function login() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    if (
+      email === localStorage.getItem("userEmail") &&
+      password === localStorage.getItem("userPassword")
+    ) {
+      localStorage.setItem("login", "true");
+      window.open("index.html", "_blank");
+    } else {
+      alert("Email atau password salah!");
+    }
+  }
 </script>
 
 </body>
