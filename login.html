@@ -46,6 +46,7 @@
       margin-bottom: 10px;
       border-radius: 14px;
       border: 2px solid #111;
+      font-family: 'Poppins', sans-serif;
     }
 
     button {
@@ -110,6 +111,7 @@
     <input type="text" id="fname" placeholder="First Name">
     <input type="text" id="lname" placeholder="Last Name">
     <input type="email" id="signupEmail" placeholder="Email">
+    <input type="text" id="address" placeholder="Address">
     <input type="password" id="signupPassword" placeholder="Password">
 
     <button onclick="signup()">Daftar</button>
@@ -137,9 +139,10 @@
     const fname = document.getElementById("fname").value;
     const lname = document.getElementById("lname").value;
     const email = document.getElementById("signupEmail").value;
+    const address = document.getElementById("address").value;
     const password = document.getElementById("signupPassword").value;
 
-    if (!fname || !lname || !email || !password) {
+    if (!fname || !lname || !email || !address || !password) {
       alert("Semua data wajib diisi!");
       return;
     }
@@ -147,6 +150,7 @@
     localStorage.setItem("userEmail", email);
     localStorage.setItem("userPassword", password);
     localStorage.setItem("fullname", fname + " " + lname);
+    localStorage.setItem("address", address);
 
     alert("Akun berhasil dibuat. Silakan login.");
     showLogin();
