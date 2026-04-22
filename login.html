@@ -82,6 +82,33 @@
     .hidden {
       display: none;
     }
+
+    .notif {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  border: 2px solid;
+}
+
+.notif.success {
+  background: #d4edda;
+  color: #155724;
+  border-color: #155724;
+}
+
+.notif.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-color: #721c24;
+}
+
+.notif.warning {
+  background: #fff3cd;
+  color: #856404;
+  border-color: #856404;
+}
   </style>
 </head>
 
@@ -90,20 +117,22 @@
 <div class="auth-box">
 
   <!-- LOGIN -->
-  <div id="loginForm">
-    <h2>Login</h2>
-    <p>Masuk ke Komika Library</p>
+<div id="loginForm">
+  <h2>Login</h2>
+  <p>Masuk ke Komika Library</p>
 
-    <input type="email" id="loginEmail" placeholder="Email">
-    <input type="password" id="loginPassword" placeholder="Password">
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
 
-    <button onclick="login()">Masuk</button>
+  <button onclick="login()">Masuk</button>
+  
+  <div id="notif" class="notif hidden"></div>
 
-    <div class="switch">
-      Belum punya akun?
-      <span onclick="showSignup()">Daftar</span>
-    </div>
+  <div class="switch">
+    Belum punya akun?
+    <span onclick="showSignup()">Daftar</span>
   </div>
+</div>
 
   <!-- SIGN UP -->
   <div id="signupForm" class="hidden">
@@ -158,20 +187,39 @@
     showLogin();
   }
 
-  function login() {
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+function login() {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
 
-    if (
-      email === localStorage.getItem("userEmail") &&
-      password === localStorage.getItem("userPassword")
-    ) {
-      localStorage.setItem("login", "true");
-      window.open("index.html", "_blank");
-    } else {
-      alert("Email atau password salah!");
-    }
+  const savedEmail = localStorage.getItem("userEmail");
+  const savedPassword = localStorage.getItem("userPassword");
+
+  const notif = document.getElementById("notif");
+
+  notif.classList.remove("hidden", "success", "error", "warning");
+
+ 
+  if (email === "" || password === "") {
+    notif.classList.add("warning");
+    notif.innerText = "Input belum lengkap!";
   }
+ 
+  else if (email === savedEmail && password === savedPassword) {
+    notif.classList.add("success");
+    notif.innerText = "Login berhasil!";
+    localStorage.setItem("login", "true");
+
+    setTimeout(() => {
+      window.open("index.html", "_blank");
+    }, 1000);
+  }
+
+  else {
+    notif.classList.add("error");
+    notif.innerText = "Email atau password salah!";
+  }
+}
+
 </script>
 
 </body>
