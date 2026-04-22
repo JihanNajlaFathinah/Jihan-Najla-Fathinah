@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator | Komika Library</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2F6FE4, #5BC6C6);
+    }
+
+    .calc-box {
+      background: white;
+      width: 320px;
+      padding: 30px;
+      border-radius: 22px;
+      border: 3px solid #111;
+      box-shadow: 10px 10px 0 #111;
+      box-sizing: border-box;
+    }
+
+    .calc-box h2 {
+      text-align: center;
+      font-family: 'Comic Neue', cursive;
+      margin-bottom: 5px;
+    }
+
+    .calc-box p {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 14px;
+      border: 2px solid #111;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px;
+      border-radius: 12px;
+      border: 2px solid #111;
+      background: #F5F7FA;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 #111;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #F5B400;
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0 #111;
+    }
+
+    .hasil {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 2px solid #111;
+      background: #F5F7FA;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="calc-box">
+  <h2>🧮 Kalkulator</h2>
+  <p>Uji operasi aritmatika dasar</p>
+
+  <input type="number" id="a" placeholder="Angka pertama">
+  <input type="number" id="b" placeholder="Angka kedua">
+
+  <div class="btn-group">
+    <button onclick="hitung('+')">+</button>
+    <button onclick="hitung('-')">−</button>
+    <button onclick="hitung('*')">×</button>
+    <button onclick="hitung('/')">÷</button>
+  </div>
+
+  <div class="hasil">
+    Hasil: <span id="hasil">0</span>
+  </div>
+</div>
+
+<script>
+  function hitung(op) {
+    const a = Number(document.getElementById("a").value);
+    const b = Number(document.getElementById("b").value);
+    let hasil;
+
+    if (isNaN(a) || isNaN(b)) {
+      hasil = "Input belum lengkap";
+    } else {
+      switch (op) {
+        case '+': hasil = a + b; break;
+        case '-': hasil = a - b; break;
+        case '*': hasil = a * b; break;
+        case '/': hasil = b !== 0 ? a / b : "Tidak bisa dibagi 0"; break;
+      }
+    }
+
+    document.getElementById("hasil").textContent = hasil;
+  }
+</script>
+
+</body>
+</html>
