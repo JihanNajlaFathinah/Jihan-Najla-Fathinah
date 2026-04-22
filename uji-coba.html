@@ -2,73 +2,96 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Uji Coba</title>
+  <title>Uji Coba | Komika Library</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
   <style>
-   body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #2F6FE4, #5BC6C6);
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2F6FE4, #5BC6C6);
+    }
 
-.uji-container {
-  background: white;
-  width: 420px;
-  padding: 40px 35px;
-  border-radius: 22px;
-  border: 3px solid #111;
-  box-shadow: 10px 10px 0 #111;
-  text-align: center;
-}
+    .uji-container {
+      background: #fff;
+      width: 420px;
+      padding: 40px 35px;
+      border-radius: 22px;
+      border: 3px solid #111;
+      box-shadow: 10px 10px 0 #111;
+      text-align: center;
+    }
 
-.uji-container h1 {
-  font-family: 'Comic Neue', cursive;
-  margin-bottom: 8px;
-}
+    .uji-container h1 {
+      font-family: 'Comic Neue', cursive;
+      margin-bottom: 6px;
+      font-size: 28px;
+    }
 
-.subtitle {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 25px;
-}
+    .subtitle {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 28px;
+    }
 
-.menu-uji {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+    .menu-uji {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-.menu-card {
-  text-decoration: none;
-  padding: 14px;
-  border-radius: 16px;
-  border: 2px solid #111;
-  font-weight: 600;
-  color: #111;
-  background: #F5F7FA;
-  box-shadow: 4px 4px 0 #111;
-  transition: all 0.2s ease;
-}
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
 
-.menu-card:hover {
-  background: #F5B400;
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #111;
-}
+      padding: 14px;
+      border-radius: 16px;
+      border: 2px solid #111;
+      font-weight: 600;
+      font-size: 15px;
+      color: #111;
+      text-decoration: none;
+
+      background: #EAF1FF;
+      box-shadow: 4px 4px 0 #111;
+      transition: all 0.2s ease;
+    }
+
+    .menu-btn:hover {
+      background: #FFC400;
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 #111;
+    }
+
+    .menu-btn span {
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Halaman Uji Coba</h1>
-  <p>Pilih menu belajar:</p>
+  <div class="uji-container">
+    <h1>Halaman Uji Coba</h1>
+    <p class="subtitle">Pilih menu belajar:</p>
 
-  <div class="menu-uji">
-    <a href="belajar-php.html" target="_blank">📘 Belajar PHP</a>
-    <a href="kalkulator.html" target="_blank">🧮 Kalkulator</a>
-</div>
+    <div class="menu-uji">
+      <a href="belajar-php.html" target="_blank" class="menu-btn">
+        <span>📘</span> Belajar PHP
+      </a>
+
+      <a href="kalkulator.html" target="_blank" class="menu-btn">
+        <span>🧮</span> Kalkulator
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
